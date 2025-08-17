@@ -22,7 +22,7 @@ WiFi Risk Analyzer (WRA) is a Python-based cybersecurity tool that scans WiFi ne
 1. Clone the repository:
 
 ```bash
-https://github.com/nikhilarne/Wifi-Risk-Analyzer-WRA-.git
+https://github.com/<your name>/Wifi-Risk-Analyzer-WRA-.git
 cd WiFi-Risk-Analyzer-WRA-
 
 
@@ -48,3 +48,4 @@ Click Analyze to view risk score, possible attacks, and risk gauge
 
 
 Download the PDF report for documentation
+
