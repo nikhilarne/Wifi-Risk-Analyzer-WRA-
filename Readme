@@ -1,1 +1,4 @@
+Wifi Risk Analyzer (WRA)
+
+WRA is a Python-based tool designed to scan WiFi networks in real-time, assess their security posture, and identify potential risks. It provides a risk score, highlights possible attack vectors, and generates detailed reports with actionable recommendations—all through an intuitive graphical user interface (GUI)
 
