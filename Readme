@@ -1,219 +1,42 @@
-# WiFi Risk Analyzer (WRA)
+WRA - WiFi Risk Analyzer
 
-A comprehensive Python-based tool that scans WiFi networks in real-time, evaluates their security posture, and identifies potential vulnerabilities. WRA provides detailed risk assessments, highlights possible attack vectors, and generates actionable security reports through an intuitive interface.
+WRA (WiFi Risk Analyzer) is a cybersecurity tool that scans nearby WiFi networks in real-time, evaluates their security risks, detects potential attacks, and generates detailed reports. It helps users identify vulnerable networks and understand possible security threats.
 
-## 🚀 Features
+Features:
 
-- *Real-time WiFi Network Scanning* - Discover and monitor nearby wireless networks
-- *Security Assessment* - Evaluate network security configurations and protocols
-- *Risk Scoring* - Quantitative risk assessment with detailed scoring metrics
-- *Attack Vector Analysis* - Identify potential security threats and attack methodologies
-- *Detailed Reporting* - Generate comprehensive security reports with actionable recommendations
-- *User-friendly Interface* - Easy-to-use command-line and GUI options
-- *Network Monitoring* - Continuous monitoring capabilities for security analysis
+* Real-time WiFi scanning: Detects all nearby WiFi networks.
+* Security assessment: Assigns a risk score based on network security type and vulnerabilities.
+* Attack detection: Identifies potential attack types a WiFi network may face.
+* Detailed reports: Generates PDF reports with network info, risk scores, and attack analysis.
+* User-friendly interface: Interactive UI for easy monitoring.
 
-## 📋 Requirements
+Installation:
 
-- Python 3.7 or higher
-- Root/Administrator privileges (required for network interface access)
-- Compatible wireless network adapter
-- Linux/macOS/Windows support
+1. Clone the repository:
+   git clone [https://github.com/yourusername/WRA.git](https://github.com/yourusername/WRA.git)
+   cd WRA
+2. Install required packages:
+   pip install -r requirements.txt
+3. Run the application:
+   python WRA\_app.py
 
-## 🛠 Installation
+Usage:
 
-### Clone the Repository
-bash
-git clone https://github.com/nikhilarne/Wifi-Risk-Analyzer-WRA-.git
-cd Wifi-Risk-Analyzer-WRA-
+1. Launch the app.
+2. Click 'Scan WiFi Networks' to detect nearby networks.
+3. View detailed info: SSID, security type, and risk score.
+4. Generate PDF reports for further analysis.
 
+Dependencies:
 
-### Install Dependencies
-bash
-pip install -r requirements.txt
+* Python 3.x
+* scapy (for network scanning)
+* fpdf2 (for PDF report generation)
+* streamlit (for UI, if web interface is used)
+* Other libraries in requirements.txt
 
-
-### Linux/macOS Additional Setup
-bash
-# Install system dependencies
-sudo apt-get update
-sudo apt-get install python3-pip python3-dev libffi-dev libssl-dev
-
-# For wireless interface management
-sudo apt-get install aircrack-ng
-
-
-### Windows Setup
-- Install Npcap or WinPcap for packet capture functionality
-- Run Command Prompt as Administrator
-
-## 🎯 Usage
-
-### Basic Scanning
-bash
-python wra.py --scan
-
-
-### Advanced Risk Analysis
-bash
-python wra.py --scan --analyze --interface wlan0
-
-
-### Generate Detailed Report
-bash
-python wra.py --scan --report --output security_report.pdf
-
-
-### Continuous Monitoring
-bash
-python wra.py --monitor --interval 60 --threshold high
-
-
-## 📊 Command Line Options
-
-| Option | Description | Example |
-|--------|-------------|---------|
-| --scan | Perform WiFi network scan | --scan |
-| --analyze | Enable security analysis | --analyze |
-| --interface | Specify network interface | --interface wlan0 |
-| --report | Generate security report | --report |
-| --output | Output file path | --output report.pdf |
-| --monitor | Continuous monitoring mode | --monitor |
-| --interval | Monitoring interval (seconds) | --interval 30 |
-| --threshold | Risk threshold (low/medium/high) | --threshold medium |
-| --verbose | Enable verbose logging | --verbose |
-| --help | Display help information | --help |
-
-## 🔍 Risk Assessment Categories
-
-### Security Protocols
-- *WEP* - Extremely High Risk (deprecated encryption)
-- *WPA* - High Risk (vulnerable to attacks)
-- *WPA2* - Medium Risk (depends on configuration)
-- *WPA3* - Low Risk (latest security standard)
-- *Open Networks* - Critical Risk (no encryption)
-
-### Signal Strength Analysis
-- Strong signals indicate proximity and potential accessibility
-- Weak signals may suggest distance or interference
-- Signal pattern analysis for rogue access point detection
-
-### Network Configuration Assessment
-- Default credentials detection
-- Vendor-specific vulnerability analysis
-- Broadcast settings evaluation
-- Channel congestion analysis
-
-## 📈 Risk Scoring System
-
-WRA uses a comprehensive scoring algorithm that considers:
-
-- *Encryption Strength* (40% weight)
-- *Authentication Methods* (25% weight)
-- *Signal Strength & Proximity* (15% weight)
-- *Network Configuration* (10% weight)
-- *Known Vulnerabilities* (10% weight)
-
-*Risk Levels:*
-- *0-25*: Low Risk (Green)
-- *26-50*: Medium Risk (Yellow)
-- *51-75*: High Risk (Orange)
-- *76-100*: Critical Risk (Red)
-
-## 📄 Report Generation
-
-WRA generates comprehensive reports including:
-
-- Executive summary with key findings
-- Detailed network inventory
-- Risk assessment matrix
-- Vulnerability analysis
-- Recommended remediation steps
-- Compliance gap analysis
-
-### Report Formats
-- PDF (Detailed professional reports)
-- JSON (Machine-readable data)
-- CSV (Spreadsheet compatible)
-- HTML (Web-viewable reports)
-
-## 🔧 Configuration
-
-Create a config.json file to customize WRA behavior:
-
-json
-{
-  "scan_settings": {
-    "timeout": 30,
-    "channels": [1, 6, 11],
-    "max_networks": 100
-  },
-  "risk_thresholds": {
-    "critical": 75,
-    "high": 50,
-    "medium": 25
-  },
-  "reporting": {
-    "include_screenshots": true,
-    "detailed_analysis": true,
-    "anonymize_data": false
-  }
-}
-
-
-## 🛡 Security Considerations
-
-- *Ethical Use*: Only scan networks you own or have explicit permission to test
-- *Legal Compliance*: Ensure compliance with local laws and regulations
-- *Data Privacy*: Handle discovered network information responsibly
-- *Responsible Disclosure*: Report vulnerabilities through appropriate channels
-
-## 🐛 Troubleshooting
-
-### Common Issues
-
-*Permission Denied*
-bash
-sudo python wra.py --scan
-
-
-*Interface Not Found*
-bash
-# List available interfaces
-python wra.py --list-interfaces
-
-
-*Dependencies Missing*
-bash
-pip install --upgrade -r requirements.txt
-
-
-*No Networks Detected*
-- Ensure wireless adapter supports monitor mode
-- Check if interface is up and configured
-- Verify driver compatibility
-
-## 🤝 Contributing
-
-We welcome contributions! Please follow these guidelines:
-
-1. Fork the repository
-2. Create a feature branch (git checkout -b feature/amazing-feature)
-3. Commit your changes (git commit -m 'Add amazing feature')
-4. Push to the branch (git push origin feature/amazing-feature)
-5. Open a Pull Request
-
-### Development Setup
-bash
-# Install development dependencies
-pip install -r requirements-dev.txt
-
-# Run tests
-python -m pytest tests/
-
-# Code formatting
-black wra.py
-flake8 wra.py
-
+Contributing:
+Contributions are welcome! Please fork the repo, make changes, and submit a pull request.
 
 ## 📜 License
 
@@ -223,11 +46,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 This tool is intended for educational and authorized security testing purposes only. Users are responsible for ensuring they have proper authorization before scanning or analyzing any wireless networks. The developers assume no liability for misuse of this tool.
 
-## 📞 Support
-
-- *Issues*: [GitHub Issues](https://github.com/nikhilarne/Wifi-Risk-Analyzer-WRA-/issues)
-- *Documentation*: [Wiki](https://github.com/nikhilarne/Wifi-Risk-Analyzer-WRA-/wiki)
-- *Email*: [Your Email Address]
 
 ## 🙏 Acknowledgments
 
@@ -249,4 +67,5 @@ This tool is intended for educational and authorized security testing purposes o
 *⭐ Star this repository if you find WRA useful!*
 
 Made with ❤ for cybersecurity professionals and enthusiasts
+
 
